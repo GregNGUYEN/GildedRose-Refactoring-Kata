@@ -1,21 +1,20 @@
 package com.gildedrose;
 
-public class Item {
-
-    public String name;
-
-    public int sellIn;
-
-    public int quality;
+public class Item extends AbstratcItem {
 
     public Item(String name, int sellIn, int quality) {
-        this.name = name;
-        this.sellIn = sellIn;
-        this.quality = quality;
+        super(name, sellIn, quality);
     }
 
-   @Override
-   public String toString() {
-        return this.name + ", " + this.sellIn + ", " + this.quality;
+    @Override
+    void updateQuality() {
+        if (name.equals(GildedRose.AGED_BRIE)) {
+            GildedRose.updateQualityForAgedBrie(this);
+        } else if (name.equals(GildedRose.BACKSTAGE)) {
+            GildedRose.updateQualityforBackstage(this);
+        } else if (!name.equals(GildedRose.SULFURAS)) {
+            GildedRose.updateQualityforNormalItems(this);
+        }
     }
+
 }
