@@ -1,100 +1,19 @@
 package com.gildedrose;
 
-public class Item {
-
-    public String name;
-
-    public int sellIn;
-
-    public int quality;
+public class Item extends AbstratcItem {
 
     public Item(String name, int sellIn, int quality) {
-        this.name = name;
-        this.sellIn = sellIn;
-        this.quality = quality;
+        super(name, sellIn, quality);
     }
 
-    public void updateQualityforBackstage() {
-        if (hasNotMaxQuality()) {
-            increaseQuality();
-            upadate_for_backstage();
-        }
-        decraseSellIn();
-        if (isExpired()) {
-            quality = 0;
-        }
-    }
-
-    void upadate_for_backstage() {
-        if (sellIn < 11) {
-            if (hasNotMaxQuality()) {
-                increaseQuality();
-            }
-        }
-
-        if (sellIn < 6) {
-            if (hasNotMaxQuality()) {
-                increaseQuality();
-            }
-        }
-    }
-
-    public void updateQualityForAgedBrie() {
-        if (hasNotMaxQuality()) {
-            increaseQuality();
-        }
-        decraseSellIn();
-        if (isExpired()) {
-            if (hasNotMaxQuality()) {
-                increaseQuality();
-            }
-        }
-    }
-
-    public void updateQualityforNormalItems() {
-        if (hasQuality()) {
-            decreaseQuality();
-        }
-        decraseSellIn();
-        if (isExpired()) {
-            if (hasQuality()) {
-                decreaseQuality();
-            }
-        }
-    }
-
-    boolean hasQuality() {
-        return quality > 0;
-    }
-
-    void decreaseQuality() {
-        quality = quality - 1;
-    }
-
-    boolean isExpired() {
-        return sellIn < 0;
-    }
-
-    void decraseSellIn() {
-        sellIn = sellIn - 1;
-    }
-
-    void increaseQuality() {
-        quality = quality + 1;
-    }
-
-    boolean hasNotMaxQuality() {
-        return quality < 50;
-    }
-
-
+    @Override
     void updateQuality() {
         if (name.equals(GildedRose.AGED_BRIE)) {
-            this.updateQualityForAgedBrie();
+            GildedRose.updateQualityForAgedBrie(this);
         } else if (name.equals(GildedRose.BACKSTAGE)) {
-            this.updateQualityforBackstage();
+            GildedRose.updateQualityforBackstage(this);
         } else if (!name.equals(GildedRose.SULFURAS)) {
-            this.updateQualityforNormalItems();
+            GildedRose.updateQualityforNormalItems(this);
         }
     }
 
