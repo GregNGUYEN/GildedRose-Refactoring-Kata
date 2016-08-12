@@ -1,9 +1,12 @@
 package com.gildedrose.items;
 
 
+import com.gildedrose.GildedRose;
+
 public class BackstageItem extends Item {
-    public BackstageItem(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+    public BackstageItem(int sellIn, int quality) {
+
+        super(GildedRose.BACKSTAGE, sellIn, quality);
     }
 
     @Override

@@ -1,9 +1,12 @@
 package com.gildedrose.items;
 
+import com.gildedrose.GildedRose;
+
 public class AgedBrieItem extends Item {
 
-    public AgedBrieItem(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+    public AgedBrieItem( int sellIn, int quality) {
+
+        super(GildedRose.AGED_BRIE, sellIn, quality);
     }
 
     @Override
