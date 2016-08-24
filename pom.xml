@@ -14,12 +14,6 @@
         <selenium.version>2.39.0</selenium.version>
         <junit.version>4.11</junit.version>
     </properties>
-    
-<settings>
-         <activeProfiles>
-                  <activeProfile>test</activeProfile>
-         </activeProfiles>
-</settings>
 
     <build>
 
