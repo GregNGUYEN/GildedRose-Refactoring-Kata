@@ -1,3 +1,3 @@
 language: java
 
-script: mvn install -Pintegration-tests -Dandroid.device=test
+script: mvn install -Ptest
