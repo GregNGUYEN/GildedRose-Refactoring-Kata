@@ -17,7 +17,7 @@
     
 <settings>
          <activeProfiles>
-                  <activeProfile>integration-test</activeProfile>
+                  <activeProfile>integration-tests</activeProfile>
          </activeProfiles>
 </settings>
 
