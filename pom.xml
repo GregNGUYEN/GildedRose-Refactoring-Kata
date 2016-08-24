@@ -13,10 +13,11 @@
         <cucumber-jvm.version>1.2.2</cucumber-jvm.version>
         <selenium.version>2.39.0</selenium.version>
         <junit.version>4.11</junit.version>
+        <src.dir>JAVA/src/main</src.dir>
     </properties>
 
     <build>
-
+         <sourceDirectory>${src.dir}</sourceDirectory>
     <plugins>
         <plugin>
             <groupId>org.codehaus.mojo</groupId>
